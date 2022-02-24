@@ -1,0 +1,18 @@
+<a href="#">Ajouter chauffeur</a>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Actions</td>
+    </tr>
+    {% for c in tabChauffeurs %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nom }}</td>
+            <td>{{ c.prenom }}</td>
+            <td><a href="#">Update</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

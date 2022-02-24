@@ -1,0 +1,24 @@
+<a href="#">Ajouter voiture</a>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Marque</td>
+        <td>Date début</td>
+        <td>Date fin</td>
+        <td>Actions</td>
+        <td>Louer</td>
+    </tr>
+    {% for v in tabVoitures %}
+        <tr>
+            <td>{{ v.id }}</td>
+            <td>{{ v.marque }}</td>
+            <td>{{ v.dateDebut|date('d-m-Y') }}</td>
+            <td>{{ v.dateFin|date('d-m-Y') }}</td>
+            <td><a href="#">Update</a>
+                <a href="{{ path('deleteVoiture',{'id':v.id}) }}">Remove</a>
+            </td>
+            <td><a href="{{ path('addChauffeur',{'id':v.id}) }}">louer</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
